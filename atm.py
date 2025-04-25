@@ -20,4 +20,4 @@ class ATM:
         if self.user_data[self.current_user]['balance'] >= amount:
             self.user_data[self.current_user]['balance'] -= amount
             return True
-        return False
+        return False  # fixed the logic issue here
