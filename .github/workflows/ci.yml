@@ -26,4 +26,9 @@ jobs:
 
       - name: Run tests with unittest
         run: |
-          python -m unittest discover  # Discover and run tests using unittest
+          python -m unittest discover > test_results.txt # Discover and run tests using unittest
+      - name: Upload test test_results
+        uses: actions/upload-artifact@v3
+        with:
+          name: unittest-test_results
+          path: test_results.txt
