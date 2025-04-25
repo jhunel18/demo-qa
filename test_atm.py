@@ -1,10 +1,11 @@
 import unittest
 from atm import ATM
 from data import users
+import copy
 
 class TestATM(unittest.TestCase):
     def setUp(self):
-        self.atm = ATM(users.copy())  # fresh copy for each test
+       self.atm = ATM(copy.deepcopy(users))  # fresh copy for each test
 
     def test_login_success(self):
         self.assertTrue(self.atm.login("123456", "1234"))
