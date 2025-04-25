@@ -1,16 +1,13 @@
 name: ATM Unit Tests CI  # Optional workflow name
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
+      - Checkout code
       - uses: actions/checkout@v3
 
       - name: Set up Python
