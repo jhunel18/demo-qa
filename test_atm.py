@@ -20,10 +20,9 @@ class TestATM(unittest.TestCase):
 
     def test_withdraw_success(self):
         self.atm.login("123456", "1234")
-        self.atm.deposit(100)
         result = self.atm.withdraw(200)
         self.assertTrue(result)
-        self.assertEqual(self.atm.get_balance(), 400)
+        self.assertEqual(self.atm.get_balance(), 300)
 
     def test_withdraw_fail(self):
         self.atm.login("123456", "1234")
