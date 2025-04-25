@@ -3,6 +3,7 @@ from atm import ATM
 from data import users  # assuming users contains the sample data
 import copy
 
+
 class TestATM(unittest.TestCase):
     def setUp(self):
         # Create a deep copy of the users data to ensure tests don't interfere with each other
