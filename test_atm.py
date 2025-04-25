@@ -20,15 +20,18 @@ class TestATM(unittest.TestCase):
 
     def test_withdraw_success(self):
         self.atm.login("123456", "1234")
+        self.atm.deposit(100)  # Make sure we deposit before withdrawing
         result = self.atm.withdraw(200)
         self.assertTrue(result)
-        self.assertEqual(self.atm.get_balance(), 300)
+        self.assertEqual(self.atm.get_balance(), 400)
 
     def test_withdraw_fail(self):
+         # Test failed withdrawal due to insufficient funds
         self.atm.login("123456", "1234")
-        result = self.atm.withdraw(1000)
+        result = self.atm.withdraw(1000)  # Try to withdraw more than the balance
+        # Verify that the withdrawal failed and the balance remains the same
         self.assertFalse(result)
-        self.assertEqual(self.atm.get_balance(), 500)
+        self.assertEqual(self.atm.get_balance(), 500)  # The balance shouldn't change, should remain 500
 
 
 if __name__ == "__main__":
