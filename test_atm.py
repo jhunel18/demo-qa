@@ -2,6 +2,7 @@ import unittest
 from atm import ATM
 from data import users
 
+
 class TestATM(unittest.TestCase):
     def setUp(self):
         self.atm = ATM(users.copy())  # fresh copy for each test
