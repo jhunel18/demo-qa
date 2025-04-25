@@ -30,5 +30,6 @@ class TestATM(unittest.TestCase):
         self.assertFalse(result)
         self.assertEqual(self.atm.get_balance(), 500)
 
+
 if __name__ == "__main__":
     unittest.main()
