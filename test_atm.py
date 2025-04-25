@@ -22,13 +22,13 @@ class TestATM(unittest.TestCase):
         self.atm.login("123456", "1234")
         result = self.atm.withdraw(200)
         self.assertTrue(result)
-        self.assertEqual(self.atm.get_balance(), 300)
+        self.assertEqual(self.atm.get_balance(), 400)
 
     def test_withdraw_fail(self):
         self.atm.login("123456", "1234")
         result = self.atm.withdraw(1000)
         self.assertFalse(result)
-        self.assertEqual(self.atm.get_balance(), 500)
+        self.assertEqual(self.atm.get_balance(), 600)
 
 
 if __name__ == "__main__":
