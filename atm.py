@@ -17,7 +17,7 @@ class ATM:
         self.user_data[self.current_user]['balance'] += amount
 
     def withdraw(self, amount):
-        if self.current_user and self.user_data[self.current_user]['balance'] >= amount:
+        if self.user_data[self.current_user]['balance'] >= amount:
             self.user_data[self.current_user]['balance'] -= amount
             return True
-        return False  # Ensuring balance remains unchanged
+        return False  # fixed the logic issue here
