@@ -5,6 +5,7 @@ import copy
 
 
 class TestATM(unittest.TestCase):
+
     def setUp(self):
         # Create a deep copy of the users data to ensure tests don't interfere with each other
         self.atm = ATM(copy.deepcopy(users))  
@@ -36,6 +37,7 @@ class TestATM(unittest.TestCase):
         result = self.atm.withdraw(1000)  # Try to withdraw 1000, which exceeds the balance
         self.assertFalse(result)  # Assert withdrawal failed
         self.assertEqual(self.atm.get_balance(), 500)  # Assert the balance is still 500
+
 
 if __name__ == "__main__":
     unittest.main()
